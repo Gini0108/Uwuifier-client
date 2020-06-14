@@ -9,37 +9,32 @@
   </div>
 </template>
 
-<script>
-import Logo from './components/Logo.vue'
-import Textarea from './components/Textarea.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+import Textarea from './components/Textarea.vue';
+import Logo from './components/Logo.vue';
 
 import { Uwuifier } from './uwuifier/index';
 
-export default {
-  name: 'App',
-
-  data: function () {
-    return {
-      input: `This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`
-    }
-  },
-
-  computed: {
-    output: function() {
-      const uwuifier = new Uwuifier();
-      return uwuifier.uwuifySentence(this.input);
-    }
-  },
-
-  methods: {
-    updateInput(input) {
-      this.input = input;
-    }
-  },
-
+@Component({
   components: {
     Textarea,
     Logo
+  }
+})
+
+export default class App extends Vue {
+  private input = `This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`;
+
+  get output() {
+    const uwuifier = new Uwuifier();
+    return uwuifier.uwuifySentence(this.input);
+  }
+
+  updateInput(value: string) {
+    console.log("a");
+    this.input = value;
   }
 }
 </script>
@@ -82,4 +77,3 @@ export default {
     margin: 0 2.5% 0 1.25%;
   }
 </style>
-

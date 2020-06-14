@@ -28,93 +28,89 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: `Textarea`,
+<script lang="ts">
+  import { Component, Prop, Vue } from 'vue-property-decorator';
 
-    props: {
-      type: String,
-      value: String
-    },
+  @Component
+  export default class Textarea extends Vue {
+    @Prop() private type!: string;
+    @Prop() private value!: string;
 
-    computed: {
-      isInput: {
-        get: function() {
-          return this.type === `input`;
-        }
-      },
+    get isInput() {
+      return this.type === `input`;
+    }
 
-      computedValue: {
-        get: function () {
-          return this.value;
-        },
+    get computedValue() {
+      return this.value;
+    }
 
-        set: function (value) {
-          this.$emit(`change`, value);
-        }
-      }
+    set computedValue(value) {
+      this.$emit(`change`, value);
     }
   }
 </script>
 
 <style scoped>
-.first {
-  padding-left: 0px;
-}
+  .first {
+    padding-left: 0px;
+  }
 
-.upside-down {
-  display: block;
-  transform: scale(1, -1);
-  margin-bottom: -3px;
-}
-span {
-  font-size: 1.5em;
-  line-height: 1;
-  padding: 2px 7.5px 0 7.5px;
-}
-.title {
-  margin: 0px 0px 15px 0px;
-  text-align: left;
-  display: flex;
-}
-textarea {
-  height: 100%;
-  width: calc(100% - 32px);
-  border-radius: 7.5px;
-font-weight: 200;
-  padding: 15px;
-  font-size: 18px;
-  font-family: inherit;
-  border: 1px solid #cccccc;
+  .upside-down {
+    display: block;
+    transform: scale(1, -1);
+    margin-bottom: -3px;
+  }
+
+  span {
+    font-size: 1.5em;
+    line-height: 1;
+    padding: 2px 7.5px 0 7.5px;
+  }
+
+  .title {
+    margin: 0px 0px 15px 0px;
+    text-align: left;
+    display: flex;
+  }
+
+  textarea {
+    height: 100%;
+    width: calc(100% - 32px);
+    border-radius: 7.5px;
+    font-weight: 200;
+    padding: 15px;
+    font-size: 18px;
+    font-family: inherit;
+    border: 1px solid #cccccc;
     background-color: transparent;
-}
-.textarea-container {
-  border-radius: 7.5px;
-      display: flex;
-      background-color: rgba(255, 232, 163, 1);
-  flex-direction: column; 
+  }
 
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
+  .textarea-container {
+    border-radius: 7.5px;
+    display: flex;
+    background-color: rgba(255, 232, 163, 1);
+    flex-direction: column; 
 
-.textarea-input {
-  height: 100%;
-  position: relative;
-}
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
 
-.textarea-image {
-  position: absolute;
-  height: auto;
+  .textarea-input {
+    height: 100%;
+    position: relative;
+  }
 
-  font-size: 10em;
+  .textarea-image {
+    position: absolute;
+    height: auto;
+
+    font-size: 10em;
 
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     margin-top: -10px;
-
-  opacity: 0.25;
-}
+    opacity: 0.25;
+  }
 </style>

@@ -8,10 +8,10 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'Logo'
-  }
+<script lang="ts">
+  import { Vue } from "vue-property-decorator";
+  
+  export default class Logo extends Vue {}
 </script>
 
 <style scoped>
@@ -33,15 +33,27 @@
   }
 
   @keyframes right-finger {
-    from { padding-left: 7.5px; }
-    50%  { padding-left: 25px }
-    to   { padding-left: 7.5px; }
+    from {
+      padding-left: 7.5px;
+    }
+    50% {
+      padding-left: 25px;
+    }
+    to {
+      padding-left: 7.5px;
+    }
   }
 
   @keyframes left-finger {
-    from { padding-right: 7.5px; }
-    50%  { padding-right: 25px }
-    to   { padding-right: 7.5px; }
+    from {
+      padding-right: 7.5px;
+    }
+    50% {
+      padding-right: 25px;
+    }
+    to {
+      padding-right: 7.5px;
+    }
   }
 
   span {
