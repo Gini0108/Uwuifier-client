@@ -13,7 +13,7 @@
 import Logo from './components/Logo.vue'
 import Textarea from './components/Textarea.vue'
 
-import { uwuifySentence } from 'uwuifier';
+import { Uwuifier } from './uwuifier/index';
 
 export default {
   name: 'App',
@@ -26,7 +26,8 @@ export default {
 
   computed: {
     output: function() {
-      return uwuifySentence(this.input);
+      const uwuifier = new Uwuifier();
+      return uwuifier.uwuifySentence(this.input);
     }
   },
 
