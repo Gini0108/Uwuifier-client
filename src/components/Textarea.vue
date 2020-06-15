@@ -3,20 +3,29 @@
     <h2 class="title">
       <!-- Input written in emoji's -->
       <template v-if="isInput">
-        <span class="first">ℹ️</span>
+        <span>ℹ️</span>
+        <div class="divider"></div>
         <span>♑</span>
+        <div class="divider"></div>
         <span>🅿️</span>
-        <span class="upside-down">♎</span> 
+        <div class="divider"></div>
+        <span>⛎</span> 
+        <div class="divider"></div>
         <span>✝️</span>
       </template>
 
       <!-- Input output written in emoji's -->
       <template v-else>
         <span class="first">🅾️</span>
-        <span class="upside-down">♎</span>
+        <div class="divider"></div>
+        <span>⛎</span>
+        <div class="divider"></div>
         <span>✝️</span>
+        <div class="divider"></div>
         <span>🅿️</span>
-        <span class="upside-down">♎</span> 
+        <div class="divider"></div>
+        <span>⛎</span> 
+        <div class="divider"></div>
         <span>✝️</span>
       </template>
     </h2>
@@ -51,20 +60,14 @@
 </script>
 
 <style scoped>
-  .first {
-    padding-left: 0px;
-  }
-
-  .upside-down {
-    display: block;
-    transform: scale(1, -1);
-    margin-bottom: -3px;
+  .divider {
+    height: 100%;
+    width: 7.5px;
   }
 
   span {
     font-size: 1.5em;
     line-height: 1;
-    padding: 2px 7.5px 0 7.5px;
   }
 
   .title {
@@ -75,42 +78,41 @@
 
   textarea {
     height: 100%;
-    width: calc(100% - 32px);
-    border-radius: 7.5px;
-    font-weight: 200;
     padding: 15px;
+    background-color: transparent;
+    
+    border: 1px solid #cccccc;
+    border-radius: 7.5px;
+
     font-size: 18px;
     font-family: inherit;
-    border: 1px solid #cccccc;
-    background-color: transparent;
+    font-weight: 200;
   }
 
   .textarea-container {
-    border-radius: 7.5px;
-    display: flex;
-    background-color: rgba(255, 232, 163, 1);
-    flex-direction: column; 
-
     height: 100%;
+    border-radius: 7.5px;
+    background-color: rgba(255, 232, 163, 1);
+
     overflow: hidden;
     position: relative;
-  }
 
-  .textarea-input {
-    height: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column; 
   }
 
   .textarea-image {
-    position: absolute;
     height: auto;
+    position: absolute;
 
+    opacity: 0.25;
     font-size: 10em;
 
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%,-50%);
-    margin-top: -10px;
-    opacity: 0.25;
+
+    user-select: none;
+    pointer-events: none;
   }
 </style>
