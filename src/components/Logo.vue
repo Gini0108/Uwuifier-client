@@ -2,16 +2,28 @@
   <div class="logo">
     <h1>
       <span>🥺</span>
-      <span class="left-finger">👉🏽</span>
-      <span class="right-finger">👈🏽</span>
+      <span class="left-finger" v-html="left"></span>
+      <span class="right-finger" v-html="right"></span>
     </h1>
   </div>
 </template>
 
 <script lang="ts">
-  import { Vue } from "vue-property-decorator";
-  
-  export default class Logo extends Vue {}
+  import { Component, Prop, Vue } from 'vue-property-decorator';
+
+  @Component
+  export default class Logo extends Vue {
+    private left = `&#128073;`;
+    private right = `&#128072;`;
+
+    mounted() {
+      const colors = [`&#127999;`, `&#127998;`, `&#127997;`, `&#127996;`, `&#127995;`];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+
+      this.left = this.left + color;
+      this.right = this.right + color;
+    }
+  }
 </script>
 
 <style scoped>
