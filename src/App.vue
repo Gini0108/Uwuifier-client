@@ -33,7 +33,6 @@ export default class App extends Vue {
   }
 
   updateInput(value: string) {
-    console.log("a");
     this.input = value;
   }
 }
