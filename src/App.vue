@@ -26,7 +26,7 @@
   })
 
   export default class App extends Vue {
-    private input = `This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`;
+    private input = `Hey! This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`;
     private typing = false;
 
     get output() {
