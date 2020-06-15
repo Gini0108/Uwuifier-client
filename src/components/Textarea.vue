@@ -31,8 +31,8 @@
     </h2>
 
     <div class="textarea-container">
-      <textarea v-model="computedValue" :readonly="!isInput"></textarea>
-      <div class="textarea-image">{{ isInput ? '🤮' : '🥰' }}</div>
+      <textarea v-model="computedValue" :readonly="!isInput" @keydown="keyDown"></textarea>
+      <div class="textarea-image" :class="{ shaking: typing }">{{ isInput ? '🤮' : '🥰' }}</div>
     </div>
   </div>
 </template>
@@ -44,6 +44,7 @@
   export default class Textarea extends Vue {
     @Prop() private type!: string;
     @Prop() private value!: string;
+    @Prop() private typing!: string;
 
     get isInput() {
       return this.type === `input`;
@@ -55,6 +56,10 @@
 
     set computedValue(value) {
       this.$emit(`change`, value);
+    }
+
+    keyDown() {
+      this.$emit(`keydown`);
     }
   }
 </script>
@@ -114,5 +119,24 @@
 
     user-select: none;
     pointer-events: none;
+  }
+
+  .shaking {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(calc(-50% + 1px), calc(-50% + 1px)) rotate(0deg); }
+    10% { transform: translate(calc(-50% - 1px), calc(-50% - 2px)) rotate(-1deg); }
+    20% { transform: translate(calc(-50% - 3px), calc(-50% + 0px)) rotate(1deg); }
+    30% { transform: translate(calc(-50% + 3px), calc(-50% + 2px)) rotate(0deg); }
+    40% { transform: translate(calc(-50% + 1px), calc(-50% - 1px)) rotate(1deg); }
+    50% { transform: translate(calc(-50% - 1px), calc(-50% + 2px)) rotate(-1deg); }
+    60% { transform: translate(calc(-50% - 3px), calc(-50% + 1px)) rotate(0deg); }
+    70% { transform: translate(calc(-50% + 3px), calc(-50% - 1px)) rotate(-1deg); }
+    80% { transform: translate(calc(-50% - 1px), calc(-50% + 1px)) rotate(1deg); }
+    90% { transform: translate(calc(-50% + 1px), calc(-50% + 2px)) rotate(0deg); }
+    100% { transform: translate(calc(-50% + 1px), calc(-50% - 2px)) rotate(-1deg); }
   }
 </style>

@@ -3,11 +3,9 @@
     <Logo></Logo>
 
     <div class="container">
-      <Textarea class="child" type="input" :value="input" @change="updateInput"></Textarea>
-
+      <Textarea class="child" type="input" :value="input" :typing="typing" @change="updateInput" @keydown="keyDown"></Textarea>
       <div class="spacer"></div>
-
-      <Textarea class="child" type="output" :value="output"></Textarea>
+      <Textarea class="child" type="output" :value="output" :typing="typing"></Textarea>
     </div>
   </div>
 </template>
@@ -29,6 +27,7 @@
 
   export default class App extends Vue {
     private input = `This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`;
+    private typing = false;
 
     get output() {
       const uwuifier = new Uwuifier();
@@ -37,6 +36,16 @@
 
     updateInput(value: string) {
       this.input = value;
+    }
+
+    keyDown() {
+      // Start shaking animation by passing boolean down to children
+      this.typing = true;
+
+      // Cancel the animation after 100 milliseconds
+      setTimeout(() => {
+        this.typing = false;
+      }, 100);
     }
   }
 </script>
