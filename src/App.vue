@@ -70,7 +70,7 @@
   }
 
   .container {
-    padding: 5%;
+    padding: 0 5% 5% 5%;
     height: 100%;
 
     display: flex;
@@ -93,7 +93,7 @@
 
   @media only screen and (min-width: 768px) {
     .container {
-      padding: 2.5%;
+      padding: 0 2.5% 2.5% 2.5%;
       flex-direction: row;
     }
 

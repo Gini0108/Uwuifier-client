@@ -1,9 +1,11 @@
 <template>
   <div class="logo">
     <h1>
-      <span>🥺</span>
-      <span class="left-finger" v-html="left"></span>
-      <span class="right-finger" v-html="right"></span>
+      <span class="face">🥺</span>
+      <div class="fingers">
+        <span class="left" v-html="left"><span></span></span>
+        <span class="right" v-html="right"></span>
+      </div>
     </h1>
   </div>
 </template>
@@ -27,20 +29,37 @@
 </script>
 
 <style scoped>
+  h1 {
+    z-index: 0;
+    position: relative;
+  }
+
   .logo {
     width: 100%;
-    padding: 45px 0;
+    padding: 25px 0;
 
     display: flex;
     justify-content: center;
   }
 
-  .right-finger {
+  .left {
+    animation: left-finger 2s 0s infinite ease-in-out;
+  }
+
+  .right {
     animation: right-finger 2s 0s infinite ease-in-out;
   }
 
-  .left-finger {
-    animation: left-finger 2s 0s infinite ease-in-out;
+  .fingers {
+    padding-top: 50px;
+  }
+
+  .face {
+    z-index: -1;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
   @keyframes right-finger {
@@ -69,6 +88,5 @@
 
   span {
     font-size: 3em;
-    margin: 0px;
   }
 </style>
