@@ -1,6 +1,6 @@
 <template>
   <header>
-      <a href="" id="logo">😁 Uwuifier</a>
+      <a id="logo" href="/">😁 Uwuifier</a>
       <nav>
           <ul>
               <li><a href="">Docs</a></li>
