@@ -5,13 +5,13 @@
                 <div class="legend">
                     <span>Input</span>
                 </div>
-                <Textarea class="child" type="input" :value="input" :typing="typing" @change="updateInput"></Textarea>
+                <Textarea type="input" :value="input" @change="updateInput"></Textarea>
             </div>
             <div class="output">
                 <div class="legend">
                     <span>Output</span>
                 </div>
-                <Textarea class="child" type="output" :value="output" :typing="typing"></Textarea>
+                <Textarea type="output" :value="output"></Textarea>
                 <button>♻</button>
             </div>
         </div>
@@ -20,10 +20,11 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-
   import { Uwuifier } from '../uwuifier/index';
-
+  
   import Textarea from './Textarea.vue';
+
+  const uwuifier = new Uwuifier();
 
   @Component({
     components: {
@@ -32,10 +33,8 @@
   })
   export default class Demo extends Vue {
     private input = `Hey! This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do.`;
-    private typing = false;
 
     get output() {
-      const uwuifier = new Uwuifier();
       return uwuifier.uwuifySentence(this.input);
     }
 

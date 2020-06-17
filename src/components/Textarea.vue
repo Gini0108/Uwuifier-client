@@ -1,5 +1,5 @@
 <template>
-    <textarea v-model="computedValue" :readonly="!isInput" spellcheck="false" @keydown="keyDown"></textarea>
+    <textarea v-model="computedValue" :readonly="!isInput" spellcheck="false"></textarea>
 </template>
 
 <script lang="ts">
@@ -9,7 +9,6 @@
   export default class Textarea extends Vue {
     @Prop() private type!: string;
     @Prop() private value!: string;
-    @Prop() private typing!: string;
 
     get isInput() {
       return this.type === `input`;
@@ -21,10 +20,6 @@
 
     set computedValue(value) {
       this.$emit(`change`, value);
-    }
-
-    keyDown() {
-      this.$emit(`keydown`);
     }
   }
 </script>
