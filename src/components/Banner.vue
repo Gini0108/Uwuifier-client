@@ -5,7 +5,7 @@
                 <img src="/yawning-face.png" alt="Yawning face">
             </div>
             <div class="content">
-                <span><b>Uwuifier</b> the best tool when it comes to...</span>
+                <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
                 <div id="buttons">
                     <a href="">GET STARTED</a>
                 </div>
