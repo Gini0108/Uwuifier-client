@@ -1,7 +1,9 @@
 <template>
     <section id="banner">
         <div class="container">
-            <div class="image">🥱</div>
+            <div class="image">
+                <img src="/yawning-face.png" alt="Yawning face">
+            </div>
             <div class="content">
                 <span><b>Uwuifier</b> the best tool when it comes to...</span>
                 <div id="buttons">
@@ -20,12 +22,13 @@
         margin-top: calc(var(--header-height) * -1 + 20px) !important;
     }
 
-    #banner .image {
-        font-size: 10rem;
+    #banner .image img {
+        width: 190px;
+        height: 190px;
     }
 
     #banner .content {
-        margin: 30px 0 0 40px;
+        margin: 30px 0 0 60px;
     }
 
     #banner span {
@@ -65,6 +68,13 @@
         #banner #buttons {
             display: flex;
             justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        #banner .image img {
+            width: 150px;
+            height: 150px;
         }
     }
 </style>
