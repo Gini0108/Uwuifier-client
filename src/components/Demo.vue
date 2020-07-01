@@ -1,10 +1,10 @@
 <template>
     <section id="demo" class="darker">
         <div class="container">
-            <span>Input</span>
-            <span>Output</span>
-            <Textarea type="input" :value="input" @change="updateInput"></Textarea>
-            <Textarea type="output" :value="output"></Textarea>
+            <label for="input">Input</label>
+            <label for="output">Output</label>
+            <Textarea id="input" type="input" :value="input" @change="updateInput"></Textarea>
+            <Textarea id="output" type="output" :value="output"></Textarea>
         </div>
     </section>
 </template>
@@ -49,7 +49,7 @@
         overflow: hidden;
     }
 
-    #demo span {
+    #demo label {
         position: relative;
         display: flex;
         justify-content: center;
@@ -57,7 +57,7 @@
         font-weight: 600;
     }
 
-    #demo span::before {
+    #demo label::before {
         content: '';
         width: 50px;
         height: 2px;
@@ -66,11 +66,11 @@
         bottom: 0;
     }
 
-    #demo span:first-of-type {
+    #demo label:first-of-type {
         background: var(--demo-io-background);
     }
 
-    #demo span:last-of-type {
+    #demo label:last-of-type {
         background: var(--app-accent);
         color: #000;
     }
