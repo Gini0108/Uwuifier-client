@@ -1,5 +1,5 @@
 <template>
-    <textarea v-model="computedValue" :readonly="!isInput" spellcheck="false"></textarea>
+    <textarea v-model="computedValue" spellcheck="false"></textarea>
 </template>
 
 <script lang="ts">
@@ -7,12 +7,7 @@
 
   @Component
   export default class Textarea extends Vue {
-    @Prop() private type!: string;
     @Prop() private value!: string;
-
-    get isInput() {
-      return this.type === `input`;
-    }
 
     get computedValue() {
       return this.value;

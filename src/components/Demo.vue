@@ -3,8 +3,8 @@
         <div class="container">
             <label for="input">Input</label>
             <label for="output">Output</label>
-            <Textarea id="input" type="input" :value="input" @change="updateInput"></Textarea>
-            <Textarea id="output" type="output" :value="output"></Textarea>
+            <Textarea id="input" :value="input" @change="updateInput"></Textarea>
+            <Textarea id="output" readonly :value="output"></Textarea>
         </div>
     </section>
 </template>
