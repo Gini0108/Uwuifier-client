@@ -1,7 +1,10 @@
 <template>
     <header>
         <a id="logo" href="/">
-            <img src="/grinning-face.png" alt="Uwuifier logo">
+            <picture>
+                <source type="image/webp" srcset="/logo-small.webp">
+                <img src="/logo-small.png" alt="Uwuifier logo">
+            </picture>
             <span>Uwuifier</span>
         </a>
         <nav>

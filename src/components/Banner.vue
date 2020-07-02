@@ -2,7 +2,10 @@
     <section id="banner">
         <div class="container">
             <div class="image">
-                <img src="/yawning-face.png" alt="Yawning face">
+                <picture>
+                    <source type="image/webp" srcset="/yawning-face.webp">
+                    <img src="/yawning-face.png" alt="Yawning face">
+                </picture>
             </div>
             <div class="content">
                 <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
