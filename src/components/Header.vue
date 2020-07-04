@@ -51,11 +51,11 @@
     header nav ul {
         font-size: 1.2rem;
         display: flex;
+        align-items: center;
     }
 
     header nav ul li {
-        display: flex;
-        align-items: center;
+        display: block;
         padding: 0 20px;
     }
 

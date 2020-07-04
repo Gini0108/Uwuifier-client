@@ -39,7 +39,7 @@
             --app-accent: #ffc83d;
             --app-color: #fff;
 
-            --section-darker-background: rgb(48, 48, 48);
+            --section-darker-background: #303030;
 
             --demo-io-background: #252525;
         }
@@ -95,28 +95,6 @@
         padding: 80px 0;
         display: flex;
         justify-content: center;
-    }
-
-    button {
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-    }
-
-    textarea {
-        font-family: inherit;
-        border: none;
-        outline: none;
-        resize: none;
-        background: none;
-        color: inherit;
-        font-size: 1.2rem;
-        font-weight: 300;
-        line-height: 1.8rem;
-        flex: 1;
-        margin: 0;
-        padding: 20px;
     }
 
     .container {

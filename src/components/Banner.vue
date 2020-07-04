@@ -38,7 +38,6 @@
         font-size: 3rem;
         font-weight: 300;
         margin-bottom: 20px;
-        display: block;
     }
 
     #banner a {

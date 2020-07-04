@@ -3,8 +3,8 @@
         <div class="container">
             <label for="input">Input</label>
             <label for="output">Output</label>
-            <Textarea id="input" :value="input" @change="updateInput"></Textarea>
-            <Textarea id="output" readonly :value="output"></Textarea>
+            <textarea id="input" spellcheck="false" v-model="inputValue"></textarea>
+            <textarea id="output" spellcheck="false" readonly v-model="outputValue"></textarea>
         </div>
     </section>
 </template>
@@ -12,25 +12,23 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
   import { Uwuifier } from '../uwuifier/index';
-  
-  import Textarea from './Textarea.vue';
 
   const uwuifier = new Uwuifier();
 
-  @Component({
-    components: {
-      Textarea
-    }
-  })
+  @Component
   export default class Demo extends Vue {
     private input = `Hey! This site can help you make any old boring text nice and uwu. We can't imagine anyone would actually use this, but you gotta do what you gotta do.`;
 
-    get output() {
-      return uwuifier.uwuifySentence(this.input);
+    get inputValue() {
+      return this.input;
     }
 
-    updateInput(value: string) {
+    set inputValue(value) {
       this.input = value;
+    }
+
+    get outputValue() {
+      return uwuifier.uwuifySentence(this.input);
     }
   }
 </script>
@@ -73,6 +71,19 @@
     #demo label:last-of-type {
         background: var(--app-accent);
         color: #000;
+    }
+
+    #demo textarea {
+        font-family: inherit;
+        border: none;
+        outline: none;
+        resize: none;
+        background: none;
+        color: inherit;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 300;
+        padding: 20px;
     }
 
     #demo textarea:first-of-type {
