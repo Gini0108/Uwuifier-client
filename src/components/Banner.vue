@@ -3,14 +3,14 @@
         <div class="container">
             <div class="image">
                 <picture>
-                    <source type="image/webp" srcset="/yawning-face.webp">
-                    <img src="/yawning-face.png" alt="Yawning face">
+                    <source type="image/webp" srcset="/exploding-face.webp">
+                    <img src="/exploding-face.png" alt="Exploding face">
                 </picture>
             </div>
             <div class="content">
                 <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
                 <div id="buttons">
-                    <a href="">GET STARTED</a>
+                    <a href="https://github.com/Schotsl/Uwuifier#quick-start" title="Go to the the quickstart section">GET STARTED</a>
                 </div>
             </div>
         </div>

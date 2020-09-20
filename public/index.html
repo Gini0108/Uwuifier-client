@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Uwuifier</title>
+
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uwuifier</title>
-    <meta name="description" content="Uwuifier is a lightweight package that allows you to uwuify any sentence or word.">
+    <meta name="description" content="This very lightweight package allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving access to many vewy kawaii sentences and faces.">
     <meta property="og:title" content="Uwuifier"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://uwuifier.com"/>
-    <meta property="og:image" content="https://uwuifier.com/logo.png"/>
-    <meta property="og:description" content="Uwuifier is a lightweight package that allows you to uwuify any sentence or word."/>
+    <meta property="og:image" content="https://uwuifier.com/logo-large.png"/>
+    <meta property="og:description" content="This very lightweight package allows you to uwuify any sentence or word (excluding URL's) with many configurable parameters while giving access to many vewy kawaii sentences and faces."/>
+
+    <!-- Font reference -->
     <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap" rel="stylesheet">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <!-- Logo reference -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
+    <link rel="manifest" href="<%= BASE_URL %>site.webmanifest">
+    <link rel="mask-icon" href="<%= BASE_URL %>safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
   </head>
+
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
