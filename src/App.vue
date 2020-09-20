@@ -1,110 +1,124 @@
 <template>
   <div id="app">
-    <Logo></Logo>
+    <Header></Header>
 
-    <div class="container">
-      <Textarea class="child" type="input" :value="input" :typing="typing" @change="updateInput" @keydown="keyDown"></Textarea>
-      <div class="spacer"></div>
-      <Textarea class="child" type="output" :value="output" :typing="typing"></Textarea>
-    </div>
+    <main>
+        <Banner></Banner>
+        <Demo></Demo>
+    </main>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-
-  import Textarea from './components/Textarea.vue';
-  import Logo from './components/Logo.vue';
-
-  import { Uwuifier } from './uwuifier/index';
+  
+  import Header from './components/Header.vue';
+  import Banner from './components/Banner.vue';
+  import Demo from './components/Demo.vue';
 
   @Component({
     components: {
-      Textarea,
-      Logo
+      Header,
+      Banner,
+      Demo,
     }
   })
-
   export default class App extends Vue {
-    private input = `Hey! This site can help you make any old boring text nice and uwu? We can't imagen anyone would actually use this but you gotta do what you gotta do`;
-    private typing = false;
-
-    get output() {
-      const uwuifier = new Uwuifier();
-      return uwuifier.uwuifySentence(this.input);
-    }
-
-    updateInput(value: string) {
-      this.input = value;
-    }
-
-    keyDown() {
-      // Start shaking animation by passing boolean down to children
-      this.typing = true;
-
-      // Cancel the animation after 100 milliseconds
-      setTimeout(() => {
-        this.typing = false;
-      }, 100);
-    }
+    
   }
 </script>
 
 <style>
-  body, html, #app {
-    height: 100%;
-    margin: 0px;
-  }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --header-height: 80px;
+            --header-background: inherit;
+            --header-color: #fff;
 
-  #app {
-    color: #2c3e50;
-    height: 100%;
-    text-align: center;
-    background-color: rgba(255, 203, 45, 1);
+            --app-background: #1f1f1f;
+            --app-accent: #ffc83d;
+            --app-color: #fff;
 
-    font-weight: 400;
-    font-family: 'Quicksand', sans-serif;
+            --section-darker-background: #303030;
 
-    display: flex;
-    flex-flow: column;
-  }
+            --demo-io-background: #252525;
+        }
+    }
 
-  .container {
-    padding: 0 5% 5% 5%;
-    height: 100%;
+    @media (prefers-color-scheme: light) {
+        :root {
+            --header-height: 80px;
+            --header-background: inherit;
+            --header-color: #000;
 
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-  }
+            --app-background: #fff;
+            --app-accent: #ffc83d;
+            --app-color: #000;
 
-  .child {
-    width: 100%;
-    height: 47.5%;
+            --section-darker-background: #f2f3f5;
 
-    display: flex;
-    flex-direction: column; 
-  }
+            --demo-io-background: #fff;
+        }
+    }
 
-  .spacer {
-    width: 100%;
-    height: 5%;
-  }
+    *, 
+    *:before, 
+    *:after {
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+    }
 
-  @media only screen and (min-width: 768px) {
+    body {
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        background: var(--app-background);
+        color: var(--app-color);
+    }
+
+    img,
+    span {
+        display: block;
+    }
+
+    a {
+        color: inherit;
+        display: inline-block;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    section {
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
     .container {
-      padding: 0 2.5% 2.5% 2.5%;
-      flex-direction: row;
+        display: flex;
+        align-items: center;
+        margin: 0 30px;
     }
 
-    .spacer {
-      width: 2.5%;
-      height: 100%;
+    .darker {
+        background: var(--section-darker-background);
     }
 
-    .child {
-      height: 100%;
-      width: 48.75%;
+    @media screen and (max-width: 900px) {
+        .container {
+            flex-direction: column;
+        }
     }
-  }
+
+    @media screen and (max-width: 700px) {
+        html {
+            font-size: 0.8rem;
+        }
+        .container {
+            margin: 0 20px;
+        }
+    }
 </style>
