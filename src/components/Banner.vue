@@ -26,7 +26,7 @@
     }
 
     #banner .image img {
-        width: 190px;
+        width: 196px;
         height: 190px;
     }
 
@@ -75,7 +75,7 @@
 
     @media screen and (max-width: 700px) {
         #banner .image img {
-            width: 150px;
+            width: 155px;
             height: 150px;
         }
     }

@@ -34,8 +34,8 @@
     }
 
     header #logo img {
+        width: 49px;
         height: 38px;
-        width: auto;
         margin-right: 16px;
     }
 
@@ -69,7 +69,7 @@
 
         header #logo img {
             height: 28px;
-            width: 28px;
+            width: 36px;
         }
     }
 </style>
