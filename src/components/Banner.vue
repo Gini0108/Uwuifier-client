@@ -79,4 +79,8 @@
             height: 150px;
         }
     }
+
+    img, span {
+        display: block;
+    }
 </style>

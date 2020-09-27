@@ -5,6 +5,7 @@
     <main>
         <Banner></Banner>
         <Demo></Demo>
+        <Sample></Sample>
     </main>
   </div>
 </template>
@@ -14,12 +15,14 @@
   
   import Header from './components/Header.vue';
   import Banner from './components/Banner.vue';
+  import Sample from './components/Sample.vue';
   import Demo from './components/Demo.vue';
 
   @Component({
     components: {
       Header,
       Banner,
+      Sample,
       Demo,
     }
   })
@@ -77,10 +80,6 @@
         color: var(--app-color);
     }
 
-    img,
-    span {
-        display: block;
-    }
 
     a {
         color: inherit;
