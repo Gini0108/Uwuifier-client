@@ -2,7 +2,7 @@
   <section id="sample">
     <carousel :per-page="1" :mouse-drag="false">
       <slide>
-        <vue-code-highlight language="javascript" class="center">
+        <vue-code-highlight language="javascript">
           <pre>
   // Import the Uwuifier package
   import { Uwuifier } from 'https://deno.land/x/uwuifier/src/index.ts';
@@ -16,7 +16,7 @@
         </vue-code-highlight>
       </slide>
       <slide>
-        <vue-code-highlight language="javascript" class="center">
+        <vue-code-highlight language="javascript">
           <pre>
   // Import the Uwuifier package
   import { Uwuifier } from 'Uwuifier';
@@ -45,29 +45,15 @@ import { component as VueCodeHighlight } from 'vue-code-highlight';
   @Component({
     components: {
       VueCodeHighlight,
-          Carousel,
-    Slide,
+      Carousel,
+      Slide,
     }
   })
   export default class Sample extends Vue { }
 </script>
 
 <style>
-  .center {
-    display: flex;;
-    align-items: center;
-    justify-content: center;
-  }
-
-  section {
+  #sample {
     background: var(--header-background);
-  }
-
-  pre { 
-    grid-template-columns: 4fr 5fr;
-    display: grid;
-
-    margin: 30px;
-    width: 1100px;
   }
 </style>
