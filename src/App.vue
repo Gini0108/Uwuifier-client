@@ -90,7 +90,7 @@
         width: 100%;
     }
 
-    section {
+    main > section {
         padding: 80px 0;
     }
 
