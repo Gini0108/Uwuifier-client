@@ -80,20 +80,18 @@
         color: var(--app-color);
     }
 
-
     a {
         color: inherit;
         display: inline-block;
     }
 
     img {
+        display: block;
         width: 100%;
     }
 
     section {
         padding: 80px 0;
-        display: flex;
-        justify-content: center;
     }
 
     .container {

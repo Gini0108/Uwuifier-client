@@ -18,6 +18,15 @@
 </template>
 
 <style scoped>
+    span {
+        display: block;
+    }
+
+    #banner {
+        display: flex;
+        justify-content: center;
+    }
+
     #banner .container {
         justify-content: center;
         height: 350px;
@@ -78,9 +87,5 @@
             width: 155px;
             height: 150px;
         }
-    }
-
-    img, span {
-        display: block;
     }
 </style>

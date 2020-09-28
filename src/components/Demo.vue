@@ -34,6 +34,11 @@
 </script>
 
 <style scoped>
+    #demo {
+        display: flex;
+        justify-content: center;
+    }
+    
     #demo .container {
         display: grid;
         grid-template-columns: 4fr 5fr;
