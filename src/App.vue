@@ -3,28 +3,43 @@
     <Header></Header>
 
     <main>
-        <Banner></Banner>
-        <Demo></Demo>
+      <Banner></Banner>
+      <Demo></Demo>
+      <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
+      <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample" color="darker"></Sample>
     </main>
   </div>
 </template>
 
 <script lang="ts">
+  // Import Vue properties
   import { Component, Vue } from 'vue-property-decorator';
   
+  // Import Vue components
   import Header from './components/Header.vue';
   import Banner from './components/Banner.vue';
+  import Sample from './components/Sample.vue';
   import Demo from './components/Demo.vue';
+
+  // Import sample data
+  import sampleData from './sample.json';
 
   @Component({
     components: {
       Header,
       Banner,
+      Sample,
       Demo,
     }
   })
   export default class App extends Vue {
-    
+    get denoObject() {
+      return sampleData.deno;
+    }
+
+    get javascriptObject() {
+      return sampleData.javascript;
+    }
   }
 </script>
 
@@ -77,24 +92,18 @@
         color: var(--app-color);
     }
 
-    img,
-    span {
-        display: block;
-    }
-
     a {
         color: inherit;
         display: inline-block;
     }
 
     img {
+        display: block;
         width: 100%;
     }
 
-    section {
+    main > section {
         padding: 80px 0;
-        display: flex;
-        justify-content: center;
     }
 
     .container {

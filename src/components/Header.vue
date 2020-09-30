@@ -18,6 +18,10 @@
 </template>
 
 <style scoped>
+    span {
+        display: block;
+    }
+
     header {
         display: flex;
         align-items: center;

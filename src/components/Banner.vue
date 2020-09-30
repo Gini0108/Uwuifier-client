@@ -18,6 +18,15 @@
 </template>
 
 <style scoped>
+    span {
+        display: block;
+    }
+
+    #banner {
+        display: flex;
+        justify-content: center;
+    }
+
     #banner .container {
         justify-content: center;
         height: 350px;
