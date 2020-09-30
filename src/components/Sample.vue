@@ -1,43 +1,20 @@
 <template>
-  <section id="sample">
-    <carousel :per-page="1" :mouse-drag="false">
-      <slide>
-        <vue-code-highlight language="javascript">
-          <pre>
-  // Import the Uwuifier package
-  import { Uwuifier } from 'https://deno.land/x/uwuifier/src/index.ts';
-
-  // Create a "Uwuifier" instance
-  const uwuifier = new Uwuifier();
-
-  // Uwuifiy a sentence
-  console.log(uwuifier.uwuifySentence('This package is amazing!'));
-          </pre>
-        </vue-code-highlight>
-      </slide>
-      <slide>
-        <vue-code-highlight language="javascript">
-          <pre>
-  // Import the Uwuifier package
-  import { Uwuifier } from 'Uwuifier';
-
-  // Create a "Uwuifier" instance
-  const uwuifier = new Uwuifier();
-
-  // Uwuifiy a sentence
-  console.log(uwuifier.uwuifySentence('This package is amazing!'));
-          </pre>
-        </vue-code-highlight>
-      </slide>
-    </carousel>
+  <section id="javascript" :class="color">
+    <div class="container">
+      <span class="title">
+        <span class="main">{{ title }}</span>
+        <span class="small">{{ subtitle }}</span>
+      </span>
+      <vue-code-highlight language="javascript">
+        <pre>{{ sample }}</pre>
+      </vue-code-highlight>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-import { component as VueCodeHighlight } from 'vue-code-highlight';
- 
- import { Carousel, Slide } from 'vue-carousel';
+  import { Component, Vue, Prop } from 'vue-property-decorator';
+  import { component as VueCodeHighlight } from 'vue-code-highlight';
 
   import "vue-code-highlight/themes/prism.css";
   import "vue-code-highlight/themes/window.css";
@@ -45,15 +22,46 @@ import { component as VueCodeHighlight } from 'vue-code-highlight';
   @Component({
     components: {
       VueCodeHighlight,
-      Carousel,
-      Slide,
     }
   })
-  export default class Sample extends Vue { }
+  export default class JavaScript extends Vue { 
+    @Prop() color!: string;
+    @Prop() title!: string;
+    @Prop() sample!: string;
+    @Prop() subtitle!: string;
+  }
 </script>
 
 <style>
-  #sample {
-    background: var(--header-background);
+  #javascript .title {
+    opacity: 0.85;
+    font-size: 2rem;
+    align-self: baseline;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  #javascript .small {
+    opacity: 0.75;
+    font-size: 1.4rem;
+    margin-left: 5px;
+  }
+  
+  #javascript {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #javascript .container {
+    width: 1100px;
+    display: flex;
+
+    box-shadow: 0 20px 25px 10px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    flex-direction: column;
+  }
+
+  #javascript .container div, 
+  #javascript .container pre {
+    width: 100%;
   }
 </style>
