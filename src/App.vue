@@ -7,6 +7,7 @@
       <Demo></Demo>
       <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
       <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample" color="darker"></Sample>
+      <Readme :sample="readmeObject.sample"></Readme>
     </main>
   </div>
 </template>
@@ -16,6 +17,7 @@
   import { Component, Vue } from 'vue-property-decorator';
   
   // Import Vue components
+  import Readme from './components/Readme.vue';
   import Header from './components/Header.vue';
   import Banner from './components/Banner.vue';
   import Sample from './components/Sample.vue';
@@ -26,6 +28,7 @@
 
   @Component({
     components: {
+      Readme,
       Header,
       Banner,
       Sample,
@@ -39,6 +42,10 @@
 
     get javascriptObject() {
       return sampleData.javascript;
+    }
+
+    get readmeObject() {
+      return sampleData.readme;
     }
   }
 </script>
