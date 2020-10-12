@@ -27,7 +27,7 @@
       _mNDetails: any;
     }
   }
-  
+
   // Import Vue properties
   import { Component, Vue } from 'vue-property-decorator';
   
@@ -50,7 +50,10 @@
   })
   export default class App extends Vue {
     mounted() {
+      console.log(`Mounted is called`);
+
       window._mNHandle.queue.push(function() {
+        console.log(`Pushing to the array`);
         window._mNDetails.loadTag("637711063", "728x90", "637711063");
       });
     }
