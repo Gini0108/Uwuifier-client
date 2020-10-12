@@ -6,13 +6,28 @@
       <Banner></Banner>
       <Demo></Demo>
       <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
-      <Ad></Ad>
+
+      <section id="ad" class="darker">
+        <div class="container">
+          <div id="637711063"></div>
+        </div>
+      </section>
+
       <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample"></Sample>
     </main>
   </div>
 </template>
 
 <script lang="ts">
+  declare global {
+    interface Window {
+      // eslint-disable-next-line
+      _mNHandle: any;
+      // eslint-disable-next-line
+      _mNDetails: any;
+    }
+  }
+  
   // Import Vue properties
   import { Component, Vue } from 'vue-property-decorator';
   
@@ -21,7 +36,6 @@
   import Banner from './components/Banner.vue';
   import Sample from './components/Sample.vue';
   import Demo from './components/Demo.vue';
-  import Ad from './components/Ad.vue';
 
   // Import sample data
   import sampleData from './sample.json';
@@ -32,10 +46,15 @@
       Banner,
       Sample,
       Demo,
-      Ad,
     }
   })
   export default class App extends Vue {
+    mounted() {
+      window._mNHandle.queue.push(function() {
+        window._mNDetails.loadTag("637711063", "728x90", "637711063");
+      });
+    }
+
     get denoObject() {
       return sampleData.deno;
     }
