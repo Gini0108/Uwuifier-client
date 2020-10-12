@@ -6,6 +6,7 @@
       <Banner></Banner>
       <Demo></Demo>
       <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
+      <Ad></Ad>
       <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample"></Sample>
     </main>
   </div>
@@ -16,11 +17,11 @@
   import { Component, Vue } from 'vue-property-decorator';
   
   // Import Vue components
-  import Readme from './components/Readme.vue';
   import Header from './components/Header.vue';
   import Banner from './components/Banner.vue';
   import Sample from './components/Sample.vue';
   import Demo from './components/Demo.vue';
+  import Ad from './components/Ad.vue';
 
   // Import sample data
   import sampleData from './sample.json';
@@ -31,6 +32,7 @@
       Banner,
       Sample,
       Demo,
+      Ad,
     }
   })
   export default class App extends Vue {
