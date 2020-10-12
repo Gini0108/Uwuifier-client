@@ -1,5 +1,5 @@
 <template>
-  <section id="javascript" :class="color">
+  <section id="javascript">
     <div class="container">
       <span class="title">
         <span class="main">{{ title }}</span>
@@ -25,7 +25,6 @@
     }
   })
   export default class JavaScript extends Vue { 
-    @Prop() color!: string;
     @Prop() title!: string;
     @Prop() sample!: string;
     @Prop() subtitle!: string;
@@ -63,5 +62,12 @@
   #javascript .container div, 
   #javascript .container pre {
     width: 100%;
+  }
+
+  @media screen and (max-width: 900px) {
+    #javascript .container {
+        width: 100%;
+        padding: 0px 20px;
+    }
   }
 </style>

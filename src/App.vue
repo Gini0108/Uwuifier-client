@@ -6,8 +6,7 @@
       <Banner></Banner>
       <Demo></Demo>
       <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
-      <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample" color="darker"></Sample>
-      <Readme :sample="readmeObject.sample"></Readme>
+      <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample"></Sample>
     </main>
   </div>
 </template>
@@ -28,7 +27,6 @@
 
   @Component({
     components: {
-      Readme,
       Header,
       Banner,
       Sample,
