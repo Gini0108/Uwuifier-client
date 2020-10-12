@@ -21,12 +21,15 @@
 
   export default class Ad extends Vue {
     mounted() {
-      window._mNHandle.queue.push(function() {
-        console.log('bruh');
-        setTimeout(() => {
-        window._mNDetails.loadTag("637711063", "728x90", "637711063");
-        }, 1500);
-      });
+      console.log('Ad component mounted!');
+      
+      setTimeout(() => {
+        console.log ('Ad initialized');
+
+        window._mNHandle.queue.push(function() {
+          window._mNDetails.loadTag("637711063", "728x90", "637711063");
+        })
+      }, 1500);
     }
   }
 </script>
