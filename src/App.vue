@@ -1,83 +1,60 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <HeaderCompoment></HeaderCompoment>
 
     <main>
-      <Banner></Banner>
-      <Demo></Demo>
-      <Sample :title="javascriptObject.title" :subtitle="javascriptObject.subtitle" :sample="javascriptObject.sample"></Sample>
+      <BannerCompoment></BannerCompoment>
+      <DemoCompoment></DemoCompoment>
 
-      <section id="ad" class="darker">
-        <div class="container">
-          <div id="637711063"></div>
-        </div>
-      </section>
-
-      <Sample :title="denoObject.title" :subtitle="denoObject.subtitle" :sample="denoObject.sample"></Sample>
+      <SampleCompoment :sample="javascriptSample"></SampleCompoment>
+      <SampleCompoment :sample="denoSample"></SampleCompoment>
     </main>
   </div>
 </template>
 
 <script lang="ts">
-  declare global {
-    interface Window {
-      // eslint-disable-next-line
-      _mNHandle: any;
-      // eslint-disable-next-line
-      _mNDetails: any;
-    }
-  }
-
   // Import Vue properties
   import { Component, Vue } from 'vue-property-decorator';
   
   // Import Vue components
-  import Header from './components/Header.vue';
-  import Banner from './components/Banner.vue';
-  import Sample from './components/Sample.vue';
-  import Demo from './components/Demo.vue';
+  import HeaderCompoment from './components/Header.vue';
+  import BannerCompoment from './components/Banner.vue';
+  import SampleCompoment from './components/Sample.vue';
+  import DemoCompoment from './components/Demo.vue';
 
-  // Import sample data
-  import sampleData from './sample.json';
+  // Import interfaces
+  import SampleInterface from './interface/Sample'
+
+  // Import SampleCompoment data
+  import javascriptData from './data/javascript.json';
+  import denoData from './data/deno.json';
 
   @Component({
     components: {
-      Header,
-      Banner,
-      Sample,
-      Demo,
+      HeaderCompoment,
+      BannerCompoment,
+      SampleCompoment,
+      DemoCompoment,
     }
   })
   export default class App extends Vue {
-    mounted() {
-      console.log(`Mounted is called`);
-
-      window._mNHandle.queue.push(function() {
-        console.log(`Pushing to the array`);
-        window._mNDetails.loadTag("637711063", "728x90", "637711063");
-      });
+    get javascriptSample(): SampleInterface {
+      return javascriptData;
     }
 
-    get denoObject() {
-      return sampleData.deno;
+    get denoSample(): SampleInterface {
+      console.log(denoData);
+      return denoData;
     }
-
-    get javascriptObject() {
-      return sampleData.javascript;
-    }
-
-    get readmeObject() {
-      return sampleData.readme;
-    }
-  }
+   }
 </script>
 
 <style>
     @media (prefers-color-scheme: dark) {
         :root {
-            --header-height: 80px;
-            --header-background: inherit;
-            --header-color: #fff;
+            --HeaderCompoment-height: 80px;
+            --HeaderCompoment-background: inherit;
+            --HeaderCompoment-color: #fff;
 
             --app-background: #1f1f1f;
             --app-accent: #ffc83d;
@@ -85,15 +62,15 @@
 
             --section-darker-background: #303030;
 
-            --demo-io-background: #252525;
+            --DemoCompoment-io-background: #252525;
         }
     }
 
     @media (prefers-color-scheme: light) {
         :root {
-            --header-height: 80px;
-            --header-background: inherit;
-            --header-color: #000;
+            --HeaderCompoment-height: 80px;
+            --HeaderCompoment-background: inherit;
+            --HeaderCompoment-color: #000;
 
             --app-background: #fff;
             --app-accent: #ffc83d;
@@ -101,7 +78,7 @@
 
             --section-darker-background: #f2f3f5;
 
-            --demo-io-background: #fff;
+            --DemoCompoment-io-background: #fff;
         }
     }
 

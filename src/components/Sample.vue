@@ -2,11 +2,11 @@
   <section id="javascript">
     <div class="container">
       <span class="title">
-        <span class="main">{{ title }}</span>
-        <span class="small">{{ subtitle }}</span>
+        <span class="main">{{ sample.title }}</span>
+        <span class="small">{{ sample.subtitle }}</span>
       </span>
       <vue-code-highlight language="javascript">
-        <pre>{{ sample }}</pre>
+        <pre>{{ sample.sample }}</pre>
       </vue-code-highlight>
     </div>
   </section>
@@ -19,15 +19,16 @@
   import "vue-code-highlight/themes/prism.css";
   import "vue-code-highlight/themes/window.css";
 
+  // Import interfaces
+  import SampleInterface from '../interface/Sample'
+
   @Component({
     components: {
       VueCodeHighlight,
     }
   })
   export default class JavaScript extends Vue { 
-    @Prop() title!: string;
-    @Prop() sample!: string;
-    @Prop() subtitle!: string;
+    @Prop() sample!: SampleInterface;
   }
 </script>
 

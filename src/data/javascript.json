@@ -1,0 +1,5 @@
+{
+  "title": "JavaScript",
+  "sample": "// Import the Uwuifier package\nimport { Uwuifier } from 'Uwuifier';\n\n// Create a \"Uwuifier\" instance\nconst uwuifier = new Uwuifier();\n\n// Uwuifiy a sentence\nconsole.log(uwuifier.uwuifySentence('This package is amazing!'));",
+  "subtitle": "( and TypeScript )"
+}
