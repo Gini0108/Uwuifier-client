@@ -52,9 +52,9 @@
 <style>
     @media (prefers-color-scheme: dark) {
         :root {
-            --HeaderCompoment-height: 80px;
-            --HeaderCompoment-background: inherit;
-            --HeaderCompoment-color: #fff;
+            --header-height: 80px;
+            --header-background: inherit;
+            --header-color: #fff;
 
             --app-background: #1f1f1f;
             --app-accent: #ffc83d;
@@ -62,15 +62,15 @@
 
             --section-darker-background: #303030;
 
-            --DemoCompoment-io-background: #252525;
+            --demo-io-background: #252525;
         }
     }
 
     @media (prefers-color-scheme: light) {
         :root {
-            --HeaderCompoment-height: 80px;
-            --HeaderCompoment-background: inherit;
-            --HeaderCompoment-color: #000;
+            --header-height: 80px;
+            --header-background: inherit;
+            --header-color: #000;
 
             --app-background: #fff;
             --app-accent: #ffc83d;
@@ -78,7 +78,7 @@
 
             --section-darker-background: #f2f3f5;
 
-            --DemoCompoment-io-background: #fff;
+            --demo-io-background: #fff;
         }
     }
 
