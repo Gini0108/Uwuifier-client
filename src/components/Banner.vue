@@ -1,91 +1,91 @@
 <template>
-    <section id="banner">
-        <div class="container">
-            <div class="image">
-                <picture>
-                    <source type="image/webp" srcset="/exploding-face.webp">
-                    <img src="/exploding-face.png" alt="Exploding face">
-                </picture>
-            </div>
-            <div class="content">
-                <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
-                <div id="buttons">
-                    <a href="https://github.com/Schotsl/Uwuifier#quick-start" title="Go to the the quickstart section">GET STARTED</a>
-                </div>
-            </div>
+  <section class="banner">
+    <div class="container">
+      <picture>
+        <source type="image/webp" srcset="/exploding-face.webp">
+        <img src="/exploding-face.png" alt="Exploding face">
+      </picture>
+      <div class="content">
+        <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
+        <div class="buttons">
+          <a href="https://github.com/Schotsl/Uwuifier" title="Go to the the quickstart section">GET STARTED</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
 
-<style scoped>
-    span {
-        display: block;
-    }
+<style lang="scss" scoped>
+  .banner {
+    display: flex;
+    justify-content: center;
+    
+    .container {
+      width: 900px;
+      height: 350px;
+      margin-top: calc(var(--header-height) * -1 + 20px) !important;
+      justify-content: center;
 
-    #banner {
-        display: flex;
-        justify-content: center;
-    }
-
-    #banner .container {
-        justify-content: center;
-        height: 350px;
-        width: 900px;
-        margin-top: calc(var(--header-height) * -1 + 20px) !important;
-    }
-
-    #banner .image img {
+      picture img {
         width: 196px;
         height: 190px;
-    }
+      }
 
-    #banner .content {
+      .content {
         margin: 30px 0 0 60px;
-    }
+      }
 
-    #banner span {
+      span {
         font-size: 3rem;
         font-weight: 300;
         margin-bottom: 20px;
-    }
+      }
 
-    #banner a {
+      a {
         color: #000;
-        background: var(--app-accent);
-        border-radius: 30px;
         padding: 15px 20px;
-        font-weight: 600;
+        background: var(--app-accent);
         transition: background 0.25s ease, box-shadow 0.25s ease;
-    }
 
-    #banner a:hover {
-        background: rgba(255, 200, 61, 0.80);
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    }
+        font-weight: 600;
+        border-radius: 30px;
 
-    @media screen and (max-width: 900px) {
-        #banner .container {
-            height: auto;
-            margin: 0 60px;
+        &:hover {
+          background: rgba(255, 200, 61, 0.80);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         }
-        #banner .content {
-            margin: 0;
-            margin-top: 20px;
-        }
-        #banner span {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        #banner #buttons {
-            display: flex;
-            justify-content: center;
-        }
+      }
     }
+  }      
 
-    @media screen and (max-width: 700px) {
-        #banner .image img {
-            width: 155px;
-            height: 150px;
-        }
+  @media screen and (max-width: 900px) {
+    .banner {
+      .container {
+        height: auto;
+        margin: 0 60px;
+      }
+
+      .content {
+        margin: 0;
+        margin-top: 20px;
+      }
+
+      span {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
     }
+  }
+
+  @media screen and (max-width: 700px) {
+    .banner picture img {
+      width: 155px;
+      height: 150px;
+    }
+  }
 </style>

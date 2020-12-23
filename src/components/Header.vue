@@ -1,79 +1,75 @@
 <template>
-    <header>
-        <a id="logo" href="/">
-            <picture>
-                <source type="image/webp" srcset="/logo-small.webp">
-                <img src="/logo-small.png" alt="Uwuifier logo">
-            </picture>
-            <span>Uwuifier</span>
-        </a>
-        <nav>
-            <a id="github-logo" href="https://github.com/Schotsl/Uwuifier" title="Go to the GitHub page" aria-label="Github" rel="noopener" target="_blank">
-                <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7173 -2.20959e-06C9.72533 -2.20959e-06 0 9.72405 0 21.7201C0 31.3147 6.22267 39.456 14.8533 42.3294C15.94 42.528 16.336 41.8574 16.336 41.2814C16.336 40.7654 16.3173 39.4 16.3067 37.588C10.2653 38.9 8.99067 34.676 8.99067 34.676C8.00267 32.1667 6.57868 31.4987 6.57868 31.4987C4.60668 30.152 6.72801 30.1787 6.72801 30.1787C8.90801 30.332 10.0547 32.4174 10.0547 32.4174C11.992 35.736 15.1387 34.7774 16.376 34.2214C16.5733 32.8187 17.1347 31.8614 17.7547 31.3187C12.932 30.7694 7.86134 28.9067 7.86134 20.584C7.86134 18.212 8.70801 16.2747 10.0973 14.7561C9.87335 14.2067 9.12801 11.9987 10.3107 9.00801C10.3107 9.00801 12.1333 8.424 16.2827 11.2333C18.0147 10.752 19.8733 10.512 21.72 10.5027C23.5653 10.512 25.4227 10.752 27.1573 11.2333C31.304 8.424 33.124 9.00801 33.124 9.00801C34.3093 11.9987 33.564 14.2067 33.3413 14.7561C34.7333 16.2747 35.5733 18.212 35.5733 20.584C35.5733 28.928 30.4947 30.764 25.6573 31.3014C26.436 31.972 27.1307 33.2974 27.1307 35.324C27.1307 38.2267 27.104 40.5694 27.104 41.2814C27.104 41.8627 27.496 42.5387 28.5973 42.3267C37.2213 39.448 43.4387 31.3134 43.4387 21.7201C43.4387 9.72405 33.7133 -2.20959e-06 21.7173 -2.20959e-06" fill="currentColor"/>
-                </svg>
-            </a>
-        </nav>
-    </header>
+  <header>
+    <a id="logo-uwuifier" href="/">
+      <picture>
+        <source type="image/webp" srcset="/logo-small.webp">
+        <img src="/logo-small.png" alt="Uwuifier logo">
+      </picture>
+      <span>Uwuifier</span>
+    </a>
+    <nav>
+      <a id="github-logo" href="https://github.com/Schotsl/Uwuifier" title="Go to the GitHub page" aria-label="Github" rel="noopener" target="_blank">
+        <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7173 -2.20959e-06C9.72533 -2.20959e-06 0 9.72405 0 21.7201C0 31.3147 6.22267 39.456 14.8533 42.3294C15.94 42.528 16.336 41.8574 16.336 41.2814C16.336 40.7654 16.3173 39.4 16.3067 37.588C10.2653 38.9 8.99067 34.676 8.99067 34.676C8.00267 32.1667 6.57868 31.4987 6.57868 31.4987C4.60668 30.152 6.72801 30.1787 6.72801 30.1787C8.90801 30.332 10.0547 32.4174 10.0547 32.4174C11.992 35.736 15.1387 34.7774 16.376 34.2214C16.5733 32.8187 17.1347 31.8614 17.7547 31.3187C12.932 30.7694 7.86134 28.9067 7.86134 20.584C7.86134 18.212 8.70801 16.2747 10.0973 14.7561C9.87335 14.2067 9.12801 11.9987 10.3107 9.00801C10.3107 9.00801 12.1333 8.424 16.2827 11.2333C18.0147 10.752 19.8733 10.512 21.72 10.5027C23.5653 10.512 25.4227 10.752 27.1573 11.2333C31.304 8.424 33.124 9.00801 33.124 9.00801C34.3093 11.9987 33.564 14.2067 33.3413 14.7561C34.7333 16.2747 35.5733 18.212 35.5733 20.584C35.5733 28.928 30.4947 30.764 25.6573 31.3014C26.436 31.972 27.1307 33.2974 27.1307 35.324C27.1307 38.2267 27.104 40.5694 27.104 41.2814C27.104 41.8627 27.496 42.5387 28.5973 42.3267C37.2213 39.448 43.4387 31.3134 43.4387 21.7201C43.4387 9.72405 33.7133 -2.20959e-06 21.7173 -2.20959e-06" fill="currentColor"/>
+        </svg>
+      </a>
+    </nav>
+  </header>
 </template>
 
-<style scoped>
-    span {
-        display: block;
-    }
+<style lang="scss" scoped>
+  header {
+    color: var(--header-color);
+    height: var(--header-height);
+    display: flex;
+    padding: 20px 45px;
+    background: var(--header-background);
+    align-items: center;
 
-    header {
-        display: flex;
-        align-items: center;
-        background: var(--header-background);
-        color: var(--header-color);
-        padding: 20px 45px;
-        height: var(--header-height);
-    }
-
-    header #logo {
-        display: flex;
-        align-items: center;
-        font-size: 2rem;
-    }
-
-    header #logo img {
+    #logo-uwuifier {
+      display: flex;
+      font-size: 2rem;
+      align-items: center;
+      
+      img {
         width: 49px;
         height: 38px;
         margin-right: 16px;
+      }
     }
 
-    header nav {
+    #github-logo svg {
+      width: 25px;
+      height: 25px;
+      display: block;
+    }
+    
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      ul {
         display: flex;
-        justify-content: flex-end;
-        flex: 1;
-    }
-
-    header nav ul {
         font-size: 1.2rem;
-        display: flex;
         align-items: center;
-    }
 
-    header nav ul li {
-        display: block;
-        padding: 0 20px;
-    }
-
-    header #github-logo svg {
-        width: 25px;
-        height: 25px;
-        display: block;
-    }
-
-    @media screen and (max-width: 700px) {
-        header {
-            padding: 20px 15px;
+        li {
+          display: block;
+          padding: 0 20px;
         }
-
-        header #logo img {
-            height: 28px;
-            width: 36px;
-        }
+      }
     }
+  }
+
+  @media screen and (max-width: 700px) {
+    header {
+      padding: 20px 15px;
+
+      #logo img {
+        height: 28px;
+        width: 36px;
+      }
+    }
+  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section id="demo" class="darker">
+    <section class="demo darker">
         <div class="container">
             <label for="input">Input</label>
             <label for="output">Output</label>
@@ -45,123 +45,129 @@
   }
 </script>
 
-<style scoped>
-    #demo {
-        display: flex;
-        justify-content: center;
-    }
+<style lang="scss" scoped>
+  .demo {
+    display: flex;
+    justify-content: center;
     
-    #demo .container {
-        box-shadow: 0 20px 25px 10px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        align-items: stretch;
-        border-radius: 6px;
-        justify-items: stretch;
+    .container {
+      box-shadow: 0 20px 25px 10px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      align-items: stretch;
+      border-radius: 6px;
+      justify-items: stretch;
 
-        display: grid;
-        grid-template-rows: 40px;
-        grid-template-columns: 4fr 5fr;
+      display: grid;
+      grid-template-rows: 40px;
+      grid-template-columns: 4fr 5fr;
 
-        width: 1100px;
-        height: 500px;
-        overflow: hidden;
-    }
+      width: 1100px;
+      height: 500px;
+      overflow: hidden;
 
-    #demo label {
-        position: relative;
+      label {
         display: flex;
+        position: relative;
 
-        justify-content: center;
-        align-items: center;
         font-weight: 600;
-    }
+        align-items: center;
+        justify-content: center;
 
-    #demo label::before {
-        content: '';
-        width: 50px;
-        height: 2px;
-        background: currentColor;
-        position: absolute;
-        bottom: 0;
-    }
+        &::before {
+          width: 50px;
+          height: 2px;
+          bottom: 0;
+          content: '';
+          position: absolute;
+          background: currentColor;
+        }
 
-    #demo label:first-of-type { background: var(--demo-io-background); }
-    #demo label:last-of-type {
-        background: var(--app-accent);
-        color: #000;
-    }
+        &:first-of-type {
+          background: var(--demo-io-background);
+        }
 
-    #demo textarea {
-        width: 100%;
-        height: 100%;
-        background-color: inherit;
+        &:last-of-type {
+          color: #000;
+          background: var(--app-accent);
+        }
+      }
 
-        font-family: inherit;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        font-weight: 300;
-
-        background: none;
-        padding: 20px;
-        outline: none;
-        border: none;
-        resize: none;
-        color: inherit;
-    }
-
-    #demo .textarea-container {
+     .textarea-container {
         position: relative;
-    }
 
-    #demo .textarea-container .twitter-button {
-        color: white;
-        display: flex;
-        position: absolute;
+        textarea {
+          width: 100%;
+          height: 100%;
+          background-color: inherit;
 
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        padding: 20px;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          font-weight: 300;
+          font-family: inherit;
 
-        box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
-        font-family: inherit;
-        font-weight: 300;
-        line-height: 1;
-        font-size: 18px;
-        border-radius: 5px;
-        background-color: var(--section-darker-background);
-    }
-
-    #demo .textarea-container .twitter-button:hover {
-        background-color: #292929;
-        cursor: pointer;
-    }
-
-    .twitter-button img {
-        width: auto;
-        height: 20px;
-
-        padding-right: 10px;
-        margin-right: 10px;
-
-        border-color: rgba(255, 255, 255, 0.35);
-        border-width: 0px 1px 0px 0px;
-        border-style: solid;
-    }
-
-    #demo .textarea-container:first-of-type { background: var(--demo-io-background); }
-    #demo .textarea-container:last-of-type {
-        background: var(--app-accent);
-        color: #000;
-    }
-
-    @media screen and (max-width: 900px) {
-        #demo .container {
-            grid-template-columns: 1fr;
-            grid-template-rows: 40px 1fr 40px 1fr;
+          color: inherit;
+          resize: none;
+          border: none;
+          outline: none;
+          padding: 20px;
+          background: none;
         }
 
-        #demo .textarea-container:first-of-type {
-            grid-area: 2;
+        .twitter-button {
+          color: white;
+          display: flex;
+          position: absolute;
+
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          padding: 20px;
+
+          font-size: 18px;
+          box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
+          line-height: 1;
+          font-weight: 300;
+          font-family: inherit;
+          border-radius: 5px;
+          background-color: var(--section-darker-background);
+
+          &:hover {
+            cursor: pointer;
+            background-color: #292929;
+          }
+
+          img {
+            width: auto;
+            height: 20px;
+
+            margin-right: 10px;
+            padding-right: 10px;
+
+            border-style: solid;
+            border-width: 0px 1px 0px 0px;
+            border-color: rgba(255, 255, 255, 0.35);
+          }
         }
+
+        &:first-of-type {
+          background: var(--demo-io-background);
+        }
+
+        &:last-of-type {
+          color: #000;
+          background: var(--app-accent);
+        }
+      }
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 40px 1fr 40px 1fr;
+
+      .textarea-container:first-of-type {
+        grid-area: 2;
+      }
+    }
+  }
 </style>

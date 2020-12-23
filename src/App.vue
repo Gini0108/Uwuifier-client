@@ -43,97 +43,111 @@
     }
 
     get denoSample(): SampleInterface {
-      console.log(denoData);
       return denoData;
     }
-   }
+  }
 </script>
 
-<style>
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --header-height: 80px;
-            --header-background: inherit;
-            --header-color: #fff;
+<style lang="scss">
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --header-height: 80px;
+      --header-background: inherit;
+      --header-color: #fff;
 
-            --app-background: #1f1f1f;
-            --app-accent: #ffc83d;
-            --app-color: #fff;
+      --app-background: #1f1f1f;
+      --app-accent: #ffc83d;
+      --app-color: #fff;
 
-            --section-darker-background: #303030;
-
-            --demo-io-background: #252525;
-        }
+      --section-darker-background: #303030;
+      --demo-io-background: #252525;
     }
+  }
 
-    @media (prefers-color-scheme: light) {
-        :root {
-            --header-height: 80px;
-            --header-background: inherit;
-            --header-color: #000;
+  @media (prefers-color-scheme: light) {
+    :root {
+      --header-height: 80px;
+      --header-background: inherit;
+      --header-color: #000;
 
-            --app-background: #fff;
-            --app-accent: #ffc83d;
-            --app-color: #000;
+      --app-background: #fff;
+      --app-accent: #ffc83d;
+      --app-color: #000;
 
-            --section-darker-background: #f2f3f5;
-
-            --demo-io-background: #fff;
-        }
+      --section-darker-background: #f2f3f5;
+      --demo-io-background: #fff;
     }
+  }
 
-    *, 
-    *:before, 
-    *:after {
-        margin: 0; 
-        padding: 0; 
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
+  span {
+    display: block;
+  }
+
+  *, 
+  *:before, 
+  *:after {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    background: var(--app-background);
+    color: var(--app-color);
+  }
+
+  a {
+    color: inherit;
+    display: inline-block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  main > section {
+    padding: 80px 0;
+  }
+
+  .container {
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .darker {
+    background: var(--section-darker-background);
+  }
+
+  @media screen and (max-width: 900px) {
+    .container {
+      flex-direction: column;
     }
+  }
 
-    body {
-        font-family: "Source Sans Pro", Arial, sans-serif;
-        background: var(--app-background);
-        color: var(--app-color);
-    }
-
-    a {
-        color: inherit;
-        display: inline-block;
-    }
-
-    img {
-        display: block;
-        width: 100%;
-    }
-
-    main > section {
-        padding: 80px 0;
+  @media screen and (max-width: 700px) {
+    html {
+      font-size: 0.8rem;
     }
 
     .container {
-        display: flex;
-        align-items: center;
-        margin: 0 30px;
+      margin: 0 20px;
     }
+  }
 
-    .darker {
-        background: var(--section-darker-background);
-    }
+  .sample .container div, 
+  .sample .container pre {
+    width: 100%;
+  }
 
-    @media screen and (max-width: 900px) {
-        .container {
-            flex-direction: column;
-        }
+  @media screen and (max-width: 900px) {
+    .sample .container {
+      width: 100%;
+      padding: 0px 20px;
     }
-
-    @media screen and (max-width: 700px) {
-        html {
-            font-size: 0.8rem;
-        }
-        .container {
-            margin: 0 20px;
-        }
-    }
+  }
 </style>
