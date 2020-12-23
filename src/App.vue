@@ -5,9 +5,6 @@
     <main>
       <BannerCompoment></BannerCompoment>
       <DemoCompoment></DemoCompoment>
-
-      <SampleCompoment :sample="javascriptSample"></SampleCompoment>
-      <SampleCompoment :sample="denoSample"></SampleCompoment>
     </main>
   </div>
 </template>
@@ -19,33 +16,16 @@
   // Import Vue components
   import HeaderCompoment from './components/Header.vue';
   import BannerCompoment from './components/Banner.vue';
-  import SampleCompoment from './components/Sample.vue';
   import DemoCompoment from './components/Demo.vue';
-
-  // Import interfaces
-  import SampleInterface from './interface/Sample'
-
-  // Import SampleCompoment data
-  import javascriptData from './data/javascript.json';
-  import denoData from './data/deno.json';
 
   @Component({
     components: {
       HeaderCompoment,
       BannerCompoment,
-      SampleCompoment,
       DemoCompoment,
     }
   })
-  export default class App extends Vue {
-    get javascriptSample(): SampleInterface {
-      return javascriptData;
-    }
-
-    get denoSample(): SampleInterface {
-      return denoData;
-    }
-  }
+  export default class App extends Vue { }
 </script>
 
 <style lang="scss">
@@ -136,18 +116,6 @@
 
     .container {
       margin: 0 20px;
-    }
-  }
-
-  .sample .container div, 
-  .sample .container pre {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 900px) {
-    .sample .container {
-      width: 100%;
-      padding: 0px 20px;
     }
   }
 </style>
