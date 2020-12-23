@@ -31,36 +31,38 @@
 <style lang="scss">
   @media (prefers-color-scheme: dark) {
     :root {
-      --header-height: 80px;
       --header-background: inherit;
+      --header-height: 80px;
       --header-color: #fff;
 
       --app-background: #1f1f1f;
       --app-accent: #ffc83d;
       --app-color: #fff;
 
+      --button-normal-color: #303030;
+      --button-hover-color: #252525;
+
       --section-darker-background: #303030;
-      --demo-io-background: #252525;
+      --section-normal-background: #252525;
     }
   }
 
   @media (prefers-color-scheme: light) {
     :root {
-      --header-height: 80px;
       --header-background: inherit;
+      --header-height: 80px;
       --header-color: #000;
 
       --app-background: #fff;
       --app-accent: #ffc83d;
       --app-color: #000;
 
+      --button-normal-color: #fff;
+      --button-hover-color: #f2f3f5;
+      
       --section-darker-background: #f2f3f5;
-      --demo-io-background: #fff;
+      --section-normal-background: #fff;
     }
-  }
-
-  span {
-    display: block;
   }
 
   *, 
@@ -77,6 +79,10 @@
     font-family: "Source Sans Pro", Arial, sans-serif;
     background: var(--app-background);
     color: var(--app-color);
+  }
+
+  span {
+    display: block;
   }
 
   a {
