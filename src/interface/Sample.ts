@@ -1,5 +1,5 @@
 export default interface Sample {
-  title: String,
-  sample: String,
-  subtitle: String,
+  title: string;
+  sample: string;
+  subtitle: string;
 }
