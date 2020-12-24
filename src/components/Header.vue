@@ -3,7 +3,7 @@
     <a class="logo-uwuifier" href="/">
       <picture>
         <source type="image/webp" srcset="/logo-small.webp">
-        <img src="/logo-small.png" alt="Uwuifier logo">
+        <img width="49" height="38" src="/logo-small.png" alt="Uwuifier logo">
       </picture>
       <span>Uwuifier</span>
     </a>

@@ -96,7 +96,7 @@
 
         &:last-of-type {
           color: #000;
-          background: var(--app-accent);
+          background: var(--app-normal-accent);
         }
       }
 
@@ -172,7 +172,7 @@
 
         &:last-of-type {
           color: #000;
-          background: var(--app-accent);
+          background: var(--app-normal-accent);
         }
       }
     }

@@ -3,7 +3,7 @@
     <div class="container">
       <picture>
         <source type="image/webp" srcset="/exploding-face.webp">
-        <img src="/exploding-face.png" alt="Exploding face">
+        <img width="196" height="190" src="/exploding-face.png" alt="Exploding face">
       </picture>
       <div class="content">
         <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
@@ -44,14 +44,14 @@
       a {
         color: #000;
         padding: 15px 20px;
-        background: var(--app-accent);
+        background: var(--app-normal-accent);
         transition: background 0.25s ease, box-shadow 0.25s ease;
 
         font-weight: 600;
         border-radius: 30px;
 
         &:hover {
-          background: #ffc83dcc;
+          background: var(--app-hover-accent);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         }
       }
