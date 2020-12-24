@@ -95,6 +95,10 @@
     display: inline-block;
   }
 
+  b {
+    font-weight: 600;
+  }
+
   img {
     display: block;
     width: 100%;

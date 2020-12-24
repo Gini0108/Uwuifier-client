@@ -101,7 +101,9 @@
       }
 
      .textarea-container {
+        display: flex;
         position: relative;
+        flex-direction: column;
 
         textarea {
           width: 100%;
@@ -124,11 +126,8 @@
         .twitter-button {
           color: white;
           display: flex;
-          position: absolute;
-
-          left: 20px;
-          right: 20px;
-          bottom: 20px;
+          position: relative;
+          margin: 0px 20px 20px 20px;
 
           font-size: 18px;
           box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
@@ -182,7 +181,7 @@
     .demo {
       .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 40px 1fr 40px 1fr;
+        grid-template-rows: 40px 0.85fr 40px 1fr;
 
         .textarea-container:first-of-type {
           grid-area: 2;

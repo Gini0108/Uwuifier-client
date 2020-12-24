@@ -60,9 +60,11 @@
 
   @media screen and (max-width: 900px) {
     .banner {
+      padding: 100px 0px 80px 0px;
+
       .container {
         height: auto;
-        margin: 0 60px;
+        margin: 0 30px;
         
         .content {
           margin: 0;
