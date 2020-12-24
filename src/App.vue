@@ -29,8 +29,8 @@
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600');
-  
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600&display=swap');
+
   :root {
     --app-normal-accent: #ffc83d;
     --app-hover-accent: #ffc83dcc

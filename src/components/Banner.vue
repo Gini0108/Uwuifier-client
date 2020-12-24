@@ -63,21 +63,21 @@
       .container {
         height: auto;
         margin: 0 60px;
-      }
+        
+        .content {
+          margin: 0;
+          margin-top: 30px;
+        }
 
-      .content {
-        margin: 0;
-        margin-top: 20px;
-      }
-
-      span {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
+        span {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        
+        .buttons {
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }

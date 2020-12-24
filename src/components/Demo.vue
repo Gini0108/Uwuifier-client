@@ -179,12 +179,14 @@
   }
 
   @media screen and (max-width: 900px) {
-    .container {
-      grid-template-columns: 1fr;
-      grid-template-rows: 40px 1fr 40px 1fr;
+    .demo {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 1fr 40px 1fr;
 
-      .textarea-container:first-of-type {
-        grid-area: 2;
+        .textarea-container:first-of-type {
+          grid-area: 2;
+        }
       }
     }
   }
