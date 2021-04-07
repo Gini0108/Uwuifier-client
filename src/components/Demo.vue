@@ -28,7 +28,7 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import { Uwuifier } from 'uwuifier';
+  import Uwuifier from 'uwuifier';
 
   const uwuifier = new Uwuifier();
 
