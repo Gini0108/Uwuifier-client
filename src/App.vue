@@ -109,6 +109,7 @@
   }
 
   .container {
+    max-width: 1128px;
     margin: 0 30px;
     display: flex;
     align-items: center;
@@ -116,12 +117,6 @@
 
   .darker {
     background: var(--section-darker-background);
-  }
-
-  @media screen and (max-width: 900px) {
-    .container {
-      flex-direction: column;
-    }
   }
 
   @media screen and (max-width: 700px) {

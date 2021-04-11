@@ -65,6 +65,7 @@
       .container {
         height: auto;
         margin: 0 30px;
+        flex-direction: column;
         
         .content {
           margin: 0;
