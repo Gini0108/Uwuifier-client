@@ -33,7 +33,7 @@
 
       .logo-uwuifier {
         display: flex;
-        font-size: 2rem;
+        font-size: 1.8rem;
         align-items: center;
       
         img {
@@ -53,17 +53,6 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
-
-        ul {
-          display: flex;
-          font-size: 1.2rem;
-          align-items: center;
-
-          li {
-            display: block;
-            padding: 0 20px;
-          }
-        }
       }
     }
   }

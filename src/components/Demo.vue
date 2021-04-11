@@ -77,6 +77,7 @@
         display: flex;
         position: relative;
 
+        font-size: 0.85rem;
         font-weight: 600;
         align-items: center;
         justify-content: center;
@@ -110,7 +111,7 @@
           height: 100%;
           background-color: inherit;
 
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           line-height: 1.8rem;
           font-weight: 300;
           font-family: inherit;
@@ -129,7 +130,7 @@
           position: relative;
           margin: 0px 20px 20px 20px;
 
-          font-size: 18px;
+          font-size: 1.15rem;
           box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
           line-height: 1;
           font-weight: 300;
@@ -151,7 +152,6 @@
           span {
             color: var(--app-color);
             margin: 25px 0px;
-            font-size: 18px;
             line-height: 0;
           }
 

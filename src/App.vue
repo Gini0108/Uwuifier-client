@@ -29,8 +29,6 @@
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600&display=swap');
-
   :root {
     --app-normal-accent: #ffc83d;
     --app-hover-accent: #ffc83dcc
@@ -81,7 +79,7 @@
   }
 
   body {
-    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-family: Segoe UI, system-ui, -apple-system, sans-serif;
     background: var(--app-background);
     color: var(--app-color);
   }
@@ -121,7 +119,7 @@
 
   @media screen and (max-width: 700px) {
     html {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     .container {
