@@ -36,19 +36,19 @@
   export default class Demo extends Vue {
     private input = `Hey! This site can help you make any old boring text nice and uwu. We can't imagine anyone would actually use this, but you gotta do what you gotta do.`;
 
-    get inputValue() {
+    get inputValue(): string {
       return this.input;
     }
 
-    set inputValue(value) {
+    set inputValue(value: string) {
       this.input = value;
     }
 
-    get outputValue() {
+    get outputValue(): string {
       return uwuifier.uwuifySentence(this.input);
     }
 
-    get twitterUrl() {
+    get twitterUrl(): string {
       return `https://twitter.com/intent/tweet?text=${this.outputValue}&url=https://uwuifier.com`;
     }
   }
