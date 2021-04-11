@@ -69,7 +69,7 @@
       grid-template-rows: 40px;
       grid-template-columns: 4fr 5fr;
 
-      width: 1100px;
+      width: 100%;
       height: 500px;
       overflow: hidden;
 
