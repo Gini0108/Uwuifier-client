@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <HeaderCompoment></HeaderCompoment>
+    <HeaderComponent></HeaderComponent>
 
     <main>
-      <BannerCompoment></BannerCompoment>
-      <DemoCompoment></DemoCompoment>
+      <BannerComponent></BannerComponent>
+      <DemoComponent></DemoComponent>
     </main>
   </div>
 </template>
@@ -14,15 +14,15 @@
   import { Component, Vue } from 'vue-property-decorator';
   
   // Import Vue components
-  import HeaderCompoment from './components/Header.vue';
-  import BannerCompoment from './components/Banner.vue';
-  import DemoCompoment from './components/Demo.vue';
+  import HeaderComponent from './components/Header.vue';
+  import BannerComponent from './components/Banner.vue';
+  import DemoComponent from './components/Demo.vue';
 
   @Component({
     components: {
-      HeaderCompoment,
-      BannerCompoment,
-      DemoCompoment,
+      HeaderComponent,
+      BannerComponent,
+      DemoComponent,
     }
   })
   export default class App extends Vue { }
