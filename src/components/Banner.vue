@@ -36,7 +36,7 @@
       }
 
       span {
-        font-size: 3rem;
+        font-size: 2.8rem;
         font-weight: 300;
         margin-bottom: 20px;
       }
@@ -65,6 +65,7 @@
       .container {
         height: auto;
         margin: 0 30px;
+        flex-direction: column;
         
         .content {
           margin: 0;

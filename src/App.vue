@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <HeaderCompoment></HeaderCompoment>
+    <HeaderComponent></HeaderComponent>
 
     <main>
-      <BannerCompoment></BannerCompoment>
-      <DemoCompoment></DemoCompoment>
+      <BannerComponent></BannerComponent>
+      <DemoComponent></DemoComponent>
     </main>
   </div>
 </template>
@@ -14,23 +14,21 @@
   import { Component, Vue } from 'vue-property-decorator';
   
   // Import Vue components
-  import HeaderCompoment from './components/Header.vue';
-  import BannerCompoment from './components/Banner.vue';
-  import DemoCompoment from './components/Demo.vue';
+  import HeaderComponent from './components/Header.vue';
+  import BannerComponent from './components/Banner.vue';
+  import DemoComponent from './components/Demo.vue';
 
   @Component({
     components: {
-      HeaderCompoment,
-      BannerCompoment,
-      DemoCompoment,
+      HeaderComponent,
+      BannerComponent,
+      DemoComponent,
     }
   })
   export default class App extends Vue { }
 </script>
 
 <style lang="scss">
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600&display=swap');
-
   :root {
     --app-normal-accent: #ffc83d;
     --app-hover-accent: #ffc83dcc
@@ -81,7 +79,7 @@
   }
 
   body {
-    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-family: Segoe UI, system-ui, -apple-system, sans-serif;
     background: var(--app-background);
     color: var(--app-color);
   }
@@ -109,6 +107,7 @@
   }
 
   .container {
+    max-width: 1128px;
     margin: 0 30px;
     display: flex;
     align-items: center;
@@ -118,15 +117,9 @@
     background: var(--section-darker-background);
   }
 
-  @media screen and (max-width: 900px) {
-    .container {
-      flex-direction: column;
-    }
-  }
-
   @media screen and (max-width: 700px) {
     html {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     .container {

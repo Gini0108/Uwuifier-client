@@ -36,19 +36,19 @@
   export default class Demo extends Vue {
     private input = `Hey! This site can help you make any old boring text nice and uwu. We can't imagine anyone would actually use this, but you gotta do what you gotta do.`;
 
-    get inputValue() {
+    get inputValue(): string {
       return this.input;
     }
 
-    set inputValue(value) {
+    set inputValue(value: string) {
       this.input = value;
     }
 
-    get outputValue() {
+    get outputValue(): string {
       return uwuifier.uwuifySentence(this.input);
     }
 
-    get twitterUrl() {
+    get twitterUrl(): string {
       return `https://twitter.com/intent/tweet?text=${this.outputValue}&url=https://uwuifier.com`;
     }
   }
@@ -69,7 +69,7 @@
       grid-template-rows: 40px;
       grid-template-columns: 4fr 5fr;
 
-      width: 1100px;
+      width: 100%;
       height: 500px;
       overflow: hidden;
 
@@ -77,6 +77,7 @@
         display: flex;
         position: relative;
 
+        font-size: 0.85rem;
         font-weight: 600;
         align-items: center;
         justify-content: center;
@@ -110,7 +111,7 @@
           height: 100%;
           background-color: inherit;
 
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           line-height: 1.8rem;
           font-weight: 300;
           font-family: inherit;
@@ -129,7 +130,7 @@
           position: relative;
           margin: 0px 20px 20px 20px;
 
-          font-size: 18px;
+          font-size: 1.15rem;
           box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
           line-height: 1;
           font-weight: 300;
@@ -151,7 +152,6 @@
           span {
             color: var(--app-color);
             margin: 25px 0px;
-            font-size: 18px;
             line-height: 0;
           }
 
