@@ -27,12 +27,12 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-  import Uwuifier from 'uwuifier';
+  import { Vue } from 'vue-class-component';
 
+  import Uwuifier from 'uwuifier';
+  
   const uwuifier = new Uwuifier();
 
-  @Component
   export default class Demo extends Vue {
     private input = `Hey! This site can help you make any old boring text nice and uwu. We can't imagine anyone would actually use this, but you gotta do what you gotta do.`;
 

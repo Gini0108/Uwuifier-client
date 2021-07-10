@@ -10,22 +10,21 @@
 </template>
 
 <script lang="ts">
-  // Import Vue properties
-  import { Component, Vue } from 'vue-property-decorator';
+  import { Options, Vue } from 'vue-class-component';
   
   // Import Vue components
   import HeaderComponent from './components/Header.vue';
   import BannerComponent from './components/Banner.vue';
   import DemoComponent from './components/Demo.vue';
 
-  @Component({
+  @Options({
     components: {
       HeaderComponent,
       BannerComponent,
       DemoComponent,
-    }
+    },
   })
-  export default class App extends Vue { }
+  export default class App extends Vue {}
 </script>
 
 <style lang="scss">
