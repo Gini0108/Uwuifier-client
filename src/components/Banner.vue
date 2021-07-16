@@ -6,9 +6,9 @@
         <img width="196" height="190" src="/exploding-face.png" alt="Exploding face">
       </picture>
       <div class="content">
-        <span><b>Uwuifier</b> allows you to uwuify any sentence or word.</span>
+        <span><b>Uwuifier</b> is now available on every Android device.</span>
         <div class="buttons">
-          <a href="https://github.com/Schotsl/Uwuifier" title="Go to the the quickstart section">GET STARTED</a>
+          <a href="https://play.google.com/store/apps/details?id=com.sjorsvanholst.uwuifier" title="Go to the PlayStore Uwuifier app">DOWNLOAD NOW</a>
         </div>
       </div>
     </div>
