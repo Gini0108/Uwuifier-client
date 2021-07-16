@@ -1,37 +1,58 @@
-name: Build and Deploy
+name: Checks
+
 on:
   push:
     branches:
       - main
 
 jobs:
+  quality:
+    name: Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Run NPM check
+        run: npm run check
+
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install NPM dependencies
         run: npm install
-      - name: Build
+
+      - name: Run NPM build
         run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+
+      - name: Archive artifact
+        uses: actions/upload-artifact@main
         with:
           name: dist
           path: dist
+
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: actions/download-artifact@main
         with:
           name: dist
           path: dist
+
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
