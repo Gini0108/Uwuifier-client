@@ -2,11 +2,16 @@
   <section class="banner">
     <div class="container">
       <picture>
-        <source type="image/webp" srcset="/logo.webp" />
-        <img width="196" height="190" src="/logo.png" alt="Exploding face" />
+        <source type="image/webp" srcset="/playstore.svg" />
+        <img
+          width="196"
+          height="190"
+          src="/playstore.svg"
+          alt="Google Play Store logo"
+        />
       </picture>
       <div class="content">
-        <span><b>Uwuifier</b> is now available on every Android device.</span>
+        <span><b>Uwuifier</b> is now available for every Android device.</span>
         <div class="buttons">
           <a
             href="https://play.google.com/store/apps/details?id=com.sjorsvanholst.uwuifier"
