@@ -52,6 +52,8 @@ import Uwuifier from "uwuifier";
 const uwuifier = new Uwuifier();
 
 export default class Demo extends Vue {
+  private changed = false;
+  private timeout = 0;
   private input = `Hey! This site can help you make any old boring text nice and uwu. We can't imagine anyone would actually use this, but you gotta do what you gotta do.`;
 
   get inputValue(): string {
@@ -63,11 +65,26 @@ export default class Demo extends Vue {
   }
 
   get outputValue(): string {
+    if (this.changed) {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(this.addHistory, 1000);
+    }
+
+    this.changed = true;
+
     return uwuifier.uwuifySentence(this.input);
   }
 
   get twitterUrl(): string {
     return `https://twitter.com/intent/tweet?text=${this.outputValue}&url=https://uwuifier.com`;
+  }
+
+  addHistory(): void {
+    const body = JSON.stringify({});
+    const method = "POST";
+    const headers = { "Content-Type": "application/json" };
+
+    fetch("https://api.uwuifier.com/v1/history", { method, body, headers });
   }
 }
 </script>
