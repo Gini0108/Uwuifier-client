@@ -80,7 +80,7 @@ export default class Demo extends Vue {
   }
 
   addHistory(): void {
-    const body = JSON.stringify({});
+    const body = JSON.stringify({ origin: "website" });
     const method = "POST";
     const headers = { "Content-Type": "application/json" };
 
