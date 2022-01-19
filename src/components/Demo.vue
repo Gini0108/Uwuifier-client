@@ -5,7 +5,7 @@
       <label for="output">Output</label>
 
       <div class="textarea-container">
-        <textarea id="input" spellcheck="false" v-model="inputValue"></textarea>
+        <textarea id="input" @click="clearInput" spellcheck="false" v-model="inputValue"></textarea>
       </div>
 
       <div class="textarea-container">
@@ -70,13 +70,18 @@ export default class Demo extends Vue {
       this.timeout = setTimeout(this.addHistory, 1000);
     }
 
-    this.changed = true;
-
     return uwuifier.uwuifySentence(this.input);
   }
 
   get twitterUrl(): string {
     return `https://twitter.com/intent/tweet?text=${this.outputValue}&url=https://uwuifier.com`;
+  }
+
+  clearInput(): void {
+    if (!this.changed) {
+      this.input = ``;
+      this.changed = true;
+    }
   }
 
   addHistory(): void {
