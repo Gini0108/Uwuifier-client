@@ -5,7 +5,12 @@
       <label for="output">Output</label>
 
       <div class="textarea-container">
-        <textarea id="input" @click="clearInput" spellcheck="false" v-model="inputValue"></textarea>
+        <textarea
+          id="input"
+          @click="clearInput"
+          spellcheck="false"
+          v-model="inputValue"
+        ></textarea>
       </div>
 
       <div class="textarea-container">
@@ -85,7 +90,9 @@ export default class Demo extends Vue {
   }
 
   addHistory(): void {
-    const body = JSON.stringify({ origin: "e7e575a2-5c8e-4f32-97fd-e1601dd9b064" });
+    const body = JSON.stringify({
+      origin: "e7e575a2-5c8e-4f32-97fd-e1601dd9b064",
+    });
     const method = "POST";
     const headers = { "Content-Type": "application/json" };
 
