@@ -20,30 +20,62 @@
           readonly
           v-model="outputValue"
         ></textarea>
-        <a
-          :href="twitterUrl"
-          class="twitter-button"
-          title="Share this text on Twitter"
-          aria-label="Twitter"
-          rel="noopener"
-          target="_blank"
-        >
-          <svg
-            width="400"
-            height="400"
-            viewBox="0 0 400 400"
-            xmlns="http://www.w3.org/2000/svg"
+
+        <div class="row">
+          <a
+            :href="twitterUrl"
+            class="twitter-button"
+            title="Share this text on Twitter"
+            aria-label="Twitter"
+            rel="noopener"
+            target="_blank"
           >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M153.62 301.59c94.34 0 145.94-78.16 145.94-145.94 0-2.22 0-4.43-.15-6.63A104.36 104.36 0 00325 122.47a102.38 102.38 0 01-29.46 8.07 51.47 51.47 0 0022.55-28.37 102.79 102.79 0 01-32.57 12.45 51.34 51.34 0 00-87.41 46.78A145.62 145.62 0 0192.4 107.81a51.33 51.33 0 0015.88 68.47A50.91 50.91 0 0185 169.86v.65a51.31 51.31 0 0041.15 50.28 51.21 51.21 0 01-23.16.88 51.35 51.35 0 0047.92 35.62 102.92 102.92 0 01-63.7 22 104.41 104.41 0 01-12.21-.74 145.21 145.21 0 0078.62 23"
-              fill="var(--app-color)"
-            />
-          </svg>
-          <span class="divider"> | </span>
-          <span class="label"> Share on Twitter </span>
-        </a>
+            <svg
+              width="400"
+              height="400"
+              viewBox="0 0 400 400"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M153.62 301.59c94.34 0 145.94-78.16 145.94-145.94 0-2.22 0-4.43-.15-6.63A104.36 104.36 0 00325 122.47a102.38 102.38 0 01-29.46 8.07 51.47 51.47 0 0022.55-28.37 102.79 102.79 0 01-32.57 12.45 51.34 51.34 0 00-87.41 46.78A145.62 145.62 0 0192.4 107.81a51.33 51.33 0 0015.88 68.47A50.91 50.91 0 0185 169.86v.65a51.31 51.31 0 0041.15 50.28 51.21 51.21 0 01-23.16.88 51.35 51.35 0 0047.92 35.62 102.92 102.92 0 01-63.7 22 104.41 104.41 0 01-12.21-.74 145.21 145.21 0 0078.62 23"
+                fill="var(--app-color)"
+              />
+            </svg>
+            <span class="divider"> | </span>
+            <span class="label"> Share on Twitter </span>
+          </a>
+
+          <button @click="saySentence" class="text-button">
+            <svg
+              width="490"
+              height="490"
+              viewBox="0 0 490 490"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <g>
+                  <g>
+                    <rect
+                      fill="#fff"
+                      x="108.1"
+                      y="149.7"
+                      width="76.2"
+                      height="190.2"
+                    />
+                    <polygon
+                      fill="#fff"
+                      points="204.2,355.1 381.9,490 381.9,0 204.2,134.9 			"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span class="divider"> | </span>
+            <span class="label">Text-to-speech</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -98,6 +130,11 @@ export default class Demo extends Vue {
 
     fetch("https://api.uwuifier.com/v1/history", { method, body, headers });
   }
+
+  saySentence(): void {
+    const utterance = new SpeechSynthesisUtterance(this.outputValue);
+    window.speechSynthesis.speak(utterance);
+  }
 }
 </script>
 
@@ -149,6 +186,10 @@ export default class Demo extends Vue {
       }
     }
 
+    .row {
+      display: flex;
+    }
+
     .textarea-container {
       display: flex;
       position: relative;
@@ -172,7 +213,9 @@ export default class Demo extends Vue {
         background: none;
       }
 
-      .twitter-button {
+      .twitter-button,
+      .text-button {
+        flex: 1;
         color: white;
         display: flex;
         position: relative;
@@ -211,6 +254,27 @@ export default class Demo extends Vue {
         .label {
           padding: 1px 0px 0px 0px;
         }
+      }
+
+      .text-button {
+        display: 0;
+        margin-left: 10px;
+
+                svg {
+          width: 22px;
+          padding: 4px;
+          box-sizing: content-box;
+          height: 22px;
+        }
+      }
+
+      .twitter-button {
+        margin-right: 10px;
+      }
+
+      button {
+          all: unset;
+          cursor: pointer;
       }
 
       &:first-of-type {
