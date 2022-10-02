@@ -158,6 +158,10 @@ export default class Demo extends Vue {
     height: 500px;
     overflow: hidden;
 
+    @media screen and (max-width: 768px) {
+      height: 700px;
+    }
+
     label {
       display: flex;
       position: relative;
@@ -188,6 +192,11 @@ export default class Demo extends Vue {
 
     .row {
       display: flex;
+      flex-direction: row;
+
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+      }
     }
 
     .textarea-container {
@@ -220,6 +229,10 @@ export default class Demo extends Vue {
         display: flex;
         position: relative;
         margin: 0px 20px 20px 20px;
+
+        @media screen and (max-width: 900px) {
+          margin: 10px 20px;
+        }
 
         font-size: 1.15rem;
         box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.03);
@@ -260,6 +273,10 @@ export default class Demo extends Vue {
         display: 0;
         margin-left: 10px;
 
+        @media screen and (max-width: 900px) {
+          margin: 10px 20px 20px 20px;
+        }
+
         svg {
           width: 22px;
           padding: 4px;
@@ -269,7 +286,13 @@ export default class Demo extends Vue {
       }
 
       .twitter-button {
-        margin-right: 10px;
+        @media screen and (min-width: 900px) {
+          margin-right: 10px;
+        }
+
+        @media screen and (max-width: 900px) {
+          margin: 20px 20px 10px 20px;
+        }
       }
 
       button {
@@ -293,7 +316,7 @@ export default class Demo extends Vue {
   .demo {
     .container {
       grid-template-columns: 1fr;
-      grid-template-rows: 40px 0.85fr 40px 1fr;
+      grid-template-rows: 40px 0.85fr 40px 1.5fr;
 
       .textarea-container:first-of-type {
         grid-area: 2;
