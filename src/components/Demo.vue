@@ -260,7 +260,7 @@ export default class Demo extends Vue {
         display: 0;
         margin-left: 10px;
 
-                svg {
+        svg {
           width: 22px;
           padding: 4px;
           box-sizing: content-box;
@@ -273,8 +273,8 @@ export default class Demo extends Vue {
       }
 
       button {
-          all: unset;
-          cursor: pointer;
+        all: unset;
+        cursor: pointer;
       }
 
       &:first-of-type {
