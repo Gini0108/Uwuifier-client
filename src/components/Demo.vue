@@ -134,7 +134,7 @@ export default class Demo extends Vue {
 
   uwuifySentence(): void {
     if (window.plausible) {
-      window.plausible("Uwuified sentences");
+      window.plausible("Uwuified sentence");
     }
   }
 
