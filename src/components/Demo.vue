@@ -25,6 +25,7 @@
           <a
             :href="twitterUrl"
             class="twitter-button"
+            @click="shareSentence"
             title="Share this text on Twitter"
             aria-label="Twitter"
             rel="noopener"
@@ -88,6 +89,10 @@ import Uwuifier from "uwuifier";
 
 const uwuifier = new Uwuifier();
 
+declare global {
+    interface Window { plausible: any; }
+}
+
 export default class Demo extends Vue {
   private changed = false;
   private timeout = 0;
@@ -104,7 +109,7 @@ export default class Demo extends Vue {
   get outputValue(): string {
     if (this.changed) {
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.addHistory, 1000);
+      this.timeout = setTimeout(this.addHistory, 10000);
     }
 
     return uwuifier.uwuifySentence(this.input);
@@ -122,18 +127,18 @@ export default class Demo extends Vue {
   }
 
   addHistory(): void {
-    const body = JSON.stringify({
-      origin: "e7e575a2-5c8e-4f32-97fd-e1601dd9b064",
-    });
-    const method = "POST";
-    const headers = { "Content-Type": "application/json" };
+    window.plausible('Uwuified sentences')
+  }
 
-    fetch("https://api.uwuifier.com/v1/history", { method, body, headers });
+  shareSentence() {
+    window.plausible('Shared sentence')
   }
 
   saySentence(): void {
     const utterance = new SpeechSynthesisUtterance(this.outputValue);
+
     window.speechSynthesis.speak(utterance);
+    window.plausible('Text-to-speech sentences')
   }
 }
 </script>
