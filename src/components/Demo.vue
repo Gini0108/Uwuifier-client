@@ -111,7 +111,7 @@ export default class Demo extends Vue {
   get outputValue(): string {
     if (this.changed) {
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(this.addHistory, 10000);
+      this.timeout = setTimeout(this.uwuifySentence, 1000);
     }
 
     return uwuifier.uwuifySentence(this.input);
@@ -128,19 +128,26 @@ export default class Demo extends Vue {
     }
   }
 
-  addHistory(): void {
-    window.plausible("Uwuified sentences");
+  uwuifySentence(): void {
+    if (window.plausible) {
+      window.plausible("Uwuified sentences");
+    }
   }
 
   shareSentence(): void {
-    window.plausible("Shared sentence");
+    if (window.plausible) {
+      window.plausible("Shared sentence");
+    }
   }
 
   saySentence(): void {
     const utterance = new SpeechSynthesisUtterance(this.outputValue);
 
     window.speechSynthesis.speak(utterance);
-    window.plausible("Text-to-speech sentences");
+
+    if (window.plausible) {
+      window.plausible("Spoke sentence");
+    }
   }
 }
 </script>
