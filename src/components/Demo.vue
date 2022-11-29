@@ -90,7 +90,9 @@ import Uwuifier from "uwuifier";
 const uwuifier = new Uwuifier();
 
 declare global {
-    interface Window { plausible: any; }
+  interface Window {
+    plausible: (event: string) => void;
+  }
 }
 
 export default class Demo extends Vue {
@@ -127,18 +129,18 @@ export default class Demo extends Vue {
   }
 
   addHistory(): void {
-    window.plausible('Uwuified sentences')
+    window.plausible("Uwuified sentences");
   }
 
-  shareSentence() {
-    window.plausible('Shared sentence')
+  shareSentence(): void {
+    window.plausible("Shared sentence");
   }
 
   saySentence(): void {
     const utterance = new SpeechSynthesisUtterance(this.outputValue);
 
     window.speechSynthesis.speak(utterance);
-    window.plausible('Text-to-speech sentences')
+    window.plausible("Text-to-speech sentences");
   }
 }
 </script>
