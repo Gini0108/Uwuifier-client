@@ -109,6 +109,10 @@ export default class Demo extends Vue {
   }
 
   get outputValue(): string {
+    if (this.input === "") {
+      return "";
+    }
+
     if (this.changed) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(this.uwuifySentence, 1000);
